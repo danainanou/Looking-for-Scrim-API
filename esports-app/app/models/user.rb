@@ -4,7 +4,8 @@ class User < ApplicationRecord
   # after_initialize :set_default_role, if: :new_record?
 
   has_many :posts
-  validates :username, presence: true, uniqueness: true
+  has_many :comments
+  validates :username, presence: true, uniqueness: true, on: :create
 
   # private
   #
