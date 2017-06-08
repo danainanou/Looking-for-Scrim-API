@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
   scope :api do
     resources :users
     resources :posts
+    resources :comments
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
   end
